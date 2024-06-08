@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useEffect,useState } from "react";
+import SearchBar from "./components/SearchBar";
+import Gallery from "./components/gallery";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  let [search, setSearch] = useState('')
+  let [message, setMessage] = useState('Search for music !')
+  let [data, setData] = useState([])
+
+  return(
+    <div>
+      <SearchBar></SearchBar>
+      {message}
+      <Gallery></Gallery>
     </div>
-  );
+  )
+
 }
 
 export default App;
